@@ -40133,7 +40133,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(4000);
 		//TimeStampwaitForElementDisplayedFastPolling(IOSHipiNeoHomePage.objiosTrackActivityPermissionPopup, 10, "Pop ups");
 
-		TimeStampwaitForElementDisplayediOS(IOSHipiNeoHomePage.objiosTrackActivityPermissionPopup, 100, "Pop ups");
+		TimeStampwaitForElementDisplayediOS(IOSHipiNeoHomePage.objiosTrackActivityPermissionPopup, 50, "Pop ups");
 		waitTime(3000);
 		if (TimeStampverifyElementExist(IOSHipiNeoHomePage.objiosTrackActivityPermissionPopup,
 				"Track Activity Permission Popup")) {
@@ -40358,7 +40358,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 			
 		 case "NonSubscribedUser":
 			 extent.HeaderChildNode(" log in as NonSubscribed User using email");
-			 TimeStampZee5AppDismissAppPermissionsPopups();
+//			 TimeStampZee5AppDismissAppPermissionsPopups();
 				// click on Profile icon
 		/*		if(!TimeStampverifyElementExist(IOSHipiNeoHomePage.objiOSProfileBtnInBelowTabBar, "Profile button")) {
 					TimeStampclick(IOSHipiNeoHomePage.objiOSLikeBtn, "log in pop up");
@@ -40444,6 +40444,8 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 			 waitTime(2000);
 			 TimeStamptype(IOSHipiNeoHomePage.objiosEmailOrPhoneInGoogle, "testinghipi99", "Username");
 			 waitTime(2000);
+			 TimeStampclick(IOSHipiNeoHomePage.objiosDoneBtnInKeyboard, "Done");
+			 waitTime(1000);
 			 TimeStampclick(IOSHipiNeoHomePage.objiosNextBtnInGoogle, "Next");
 			 TimeStampwaitForElementDisplayedFastPolling(IOSHipiNeoHomePage.objiosPasswordFieldInGoogle, 100, "Password Field");
 			 TimeStampclick(IOSHipiNeoHomePage.objiosPasswordFieldInGoogle, "Password Field");

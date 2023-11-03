@@ -131,7 +131,7 @@ public class DriverInstance extends Drivertools {
 	
 	public DesiredCapabilities generateCapabilitiesbrowserStack(String application) {
 		System.out.println("Capability-BrowserStack");
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 13 Pro Max");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 13 Pro");
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 300);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
 		capabilities.setCapability("browserstack.user", getBSuserID());
