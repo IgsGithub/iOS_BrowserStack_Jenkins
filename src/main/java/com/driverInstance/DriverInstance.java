@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -137,9 +138,15 @@ public class DriverInstance extends Drivertools {
 		capabilities.setCapability("browserstack.user", getBSuserID());
 		capabilities.setCapability("browserstack.key", getBSuserKey());
 		capabilities.setCapability(MobileCapabilityType.APP, getBSappID());
+		capabilities.setCapability("language", "en");
+		capabilities.setCapability("locale", "en_IN");
 		capabilities.setCapability("autoGrantPermissions", "true");
 		capabilities.setCapability("autoAcceptAlerts", "true");
 		capabilities.setCapability("safariInitialUrl", "https://hipi.co.in");
+		HashMap<String, Object> networkLogsOptions = new HashMap<String, Object>();
+		networkLogsOptions.put("captureContent", true);
+		capabilities.setCapability("browserstack.networkLogs", true);
+		capabilities.setCapability("browserstack.networkLogsOptions", networkLogsOptions);
 		return capabilities;
 	}
 	

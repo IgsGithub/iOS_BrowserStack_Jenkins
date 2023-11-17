@@ -41622,7 +41622,6 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		String url = getParameterFromXML("url");
 		IOSDriver driver = (IOSDriver)getDriver();
 	    Map<String, Object> params = new HashMap();
-
  
 
 	    params.put("url", "https://hipi.co.in");

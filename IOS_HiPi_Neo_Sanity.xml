@@ -66,9 +66,12 @@
 	<test name="iOSHipiNeo"> <!-- 1049 total tcs|methods -->
 		<classes>      
 			
-			 <class name="com.zee5.iOS_HiPi_NeoScripts.IOS_HiPi_Neo_Priority_P0_Test_cases" />
-				
-
+			 <class name="com.zee5.iOS_HiPi_NeoScripts.IOS_HiPi_Neo_Priority_P0_Test_cases" >
+				<methods>
+					<include name="getUrl"></include>
+					<include name="searchSuggestions"></include>
+				</methods>
+			 </class>
 		</classes>
 	</test>
 
