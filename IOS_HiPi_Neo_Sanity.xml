@@ -59,7 +59,7 @@
 
 	<listeners>
 		<listener class-name="com.extent.ExtentReporter" />
-		<!-- <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/> -->
+		<!-- <listener class-name="com.epam.reportp ortal.testng.ReportPortalTestNGListener"/> -->
 		<!-- <listener class-name="com.utility.MyTranformer"/> -->
 	</listeners>
 
@@ -67,10 +67,7 @@
 		<classes>      
 			
 			 <class name="com.zee5.iOS_HiPi_NeoScripts.IOS_HiPi_Neo_Priority_P0_Test_cases" >
-				<methods>
-					<include name="getUrl"></include>
-					<include name="searchSuggestions"></include>
-				</methods>
+
 			 </class>
 		</classes>
 	</test>

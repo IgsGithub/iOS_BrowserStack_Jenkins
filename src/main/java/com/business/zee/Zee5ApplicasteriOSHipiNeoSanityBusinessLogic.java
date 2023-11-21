@@ -12,7 +12,9 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 
 import java.awt.AWTException;	
@@ -65,7 +67,8 @@ import java.util.concurrent.TimeUnit;
 public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 
 	public Date date;
-
+	
+	
 
 	Drivertools tools;
 
@@ -41639,7 +41642,10 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(3000);
 		TimeStamptype(IOSHipiMwebHomePage.objiosmwebSearchTabInSafari, url, "Typing url");
 		waitTime(3000);
-		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
+//		driver.getKeyboard().sendKeys(Keys.ENTER);
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
 		Instant start = Instant.now();
 		if(TimeStampwaitForElementDisplayedFastPolling(IOSHipiMwebHomePage.objiOSmwebDiscoverBtnInBelowTabBar, 50, "Explore tab")) {	
 			Instant end = Instant.now();
@@ -41721,7 +41727,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 
 		String url = getParameterFromXML("url");
 		waitTime(4000);
-		
+		IOSDriver driver = (IOSDriver)getDriver();
 		
 		TimeStampclick(IOSHipiMwebHomePage.objiosTabOverViewBtn, "Tab overview");
 		waitTime(3000);
@@ -41731,7 +41737,9 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(3000);
 		TimeStamptype(IOSHipiMwebHomePage.objiosmwebSearchTabInSafari, url, url+"Typing url");
 		waitTime(3000);
-		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
 		
 		TimeStampwaitForElementDisplayedFastPolling(IOSHipiMwebHomePage.objiOSmwebDiscoverBtnInBelowTabBar, 50, "Explore tab");
 		waitTime(4000);
@@ -41749,7 +41757,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 
 		Instant start = Instant.now();
 
-		if(	TimeStampwaitForElementDisplayedFastPolling(IOSHipiMwebHomePage.objiOSmwebDownloadBtnInAppStore,100,"Download button")){
+		if(	TimeStampwaitForElementDisplayedFastPolling(IOSHipiMwebHomePage.objiOSmwebDownloadBtnInAppStore,150,"Download button")){
 			Instant end = Instant.now();
 
 			Duration timeElapsed = Duration.between(start, end);
@@ -41802,7 +41810,9 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(3000);
 		TimeStamptype(IOSHipiMwebHomePage.objiosmwebSearchTabInSafari, url, url+"Typing url");
 		waitTime(3000);
-		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
 		waitTime(4000);
 
 		
@@ -41847,6 +41857,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		Time_ExcelUpdate.TestCaseIDNode(TCID);
 		Time_ExcelUpdate.ModuleNode("MPWA--discover screen search result");
 		Time_ExcelUpdate.TestCaseSummaryNode1("MPWA--Check  time of Searching a keyword in Discover screen ");
+		IOSDriver driver = (IOSDriver)getDriver();
 		TimeStampclick(IOSHipiMwebHomePage.objiOSmwebDiscoverBtnInBelowTabBar, "Discover button");
 		TimeStampclick(IOSHipiMwebHomePage.objiiosmwebReloadBtn,"Reload screen");
 		waitTime(4000);
@@ -41863,8 +41874,9 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(3000);
 		//	hideKeyboard();
 		//	waitTime(2500);
-
-		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard, "search");
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard, "search");
 		//	keyboardaction("Enter");
 		Instant start = Instant.now();
 
@@ -42372,6 +42384,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 	public void searchResultsMPWA(String SearchItem,String TCID) throws Exception {
 
 		extent.HeaderChildNode("Search Result for "+SearchItem);
+		IOSDriver driver = (IOSDriver)getDriver();
 		String url = getParameterFromXML("url");
 		String Suggestions1="";
 		String Suggestions2="";
@@ -42399,6 +42412,8 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 			waitTime(3000);
 			TimeStamptype(IOSHipiMwebHomePage.objiosmwebSearchTabInSafari, url, url+"Typing url");
 			waitTime(3000);
+			Actions action  = new Actions(driver);
+			action.sendKeys(Keys.ENTER).perform();
 			TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebSearchButtonInKeyboard,"search button in keyboard");
 			waitTime(4000);
 
@@ -42444,8 +42459,8 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 			//Time_ExcelUpdate.TestCaseSummaryNode1("Suggestion  not present");
 			extent.extentLoggerFail("",TCID + "Suggestion  not present");
 		}
-
-		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebreturnButtonInKeyboard, "Search button in keyboard");
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHipiMwebDiscoverPage.objiosmwebreturnButtonInKeyboard, "Search button in keyboard");
 		//keyboardaction("Enter");
 		waitTime(2000);
 		TimeStampwaitForElementDisplayedFastPolling(IOSHipiMwebDiscoverPage.objiosmwebTabnameInDiscoverSearchResultsPage("Top"), 100, "results after search");
