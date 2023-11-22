@@ -39340,6 +39340,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		Time_ExcelUpdate.TestCaseIDNode(TCID);
 		Time_ExcelUpdate.ModuleNode("discover screen search result");
 		Time_ExcelUpdate.TestCaseSummaryNode1("Check  time of Searching a keyword in Discover screen ");
+		
 		TimeStampclick(IOSHipiNeoHomePage.objiOSDiscoverBtnInBelowTabBar, "Discover button");
 		waitTime(5000);
 		TimeStampclick(IOSHiPiNeoDiscoverPage.objiosSearchFieldInDiscoverPage, "searchfield");
@@ -39348,7 +39349,10 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		waitTime(7000);
 		//							hideKeyboard();
 		//							waitTime(2500);
-		TimeStampclick(IOSHiPiNeoDiscoverPage.objiosSearchButtonInKeyboard, "search");
+		IOSDriver driver = (IOSDriver)getDriver();
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
+//		TimeStampclick(IOSHiPiNeoDiscoverPage.objiosSearchButtonInKeyboard, "search");
 		//							keyboardaction("Enter");
 		Instant start = Instant.now();
 
@@ -39486,7 +39490,7 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		Instant start = Instant.now();
 
 		//extent.extentLogger("", "Clicked on Bannner in discover page at Time----- "+ start);
-		if(TimeStampwaitForElementDisplayedFastPolling(IOSHiPiNeoDiscoverPage.objiosHashtagTitle,100,"Hashtag title")) {
+		if(TimeStampwaitForElementDisplayedFastPolling(IOSHiPiNeoDiscoverPage.objiosHashtagTitle,150,"Hashtag title")) {
 
 			Instant end = Instant.now();
 			//extent.extentLogger("", "Hashtag screen is seen  at Time----- " + end);
@@ -42026,10 +42030,12 @@ public class Zee5ApplicasteriOSHipiNeoSanityBusinessLogic extends Utilities {
 		}
 
 
+		IOSDriver driver = (IOSDriver)getDriver();
+		Actions action  = new Actions(driver);
+		action.sendKeys(Keys.ENTER).perform();
 
 
-
-		TimeStampclick(IOSHiPiNeoDiscoverPage.objiosSearchButtonInKeyboard, "Search button in keyboard");
+//		TimeStampclick(IOSHiPiNeoDiscoverPage.objiosSearchButtonInKeyboard, "Search button in keyboard");
 		waitTime(2000);
 		TimeStampwaitForElementDisplayedFastPolling(IOSHiPiNeoDiscoverPage.objiosProfileInDiscoverpage(1), 100, "results after search");
 		extent.extentLogger("","Search done");
